@@ -5,7 +5,17 @@
 This repository contains resources referenced in the paper [Turn That Frown Upside Down: FaceID Customization via Cross-Training Data](). 
 
 If you find this repository helpful, please cite the following:
-
+```latex
+@misc{wang2025turnfrownupsidedown,
+      title={Turn That Frown Upside Down: FaceID Customization via Cross-Training Data}, 
+      author={Shuhe Wang and Xiaoya Li and Xiaofei Sun and Guoyin Wang and Tianwei Zhang and Jiwei Li and Eduard Hovy},
+      year={2025},
+      eprint={2501.15407},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2501.15407}, 
+}
+```
 
 
 
