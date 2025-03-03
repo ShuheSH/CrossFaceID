@@ -35,7 +35,7 @@ If you find this repository helpful, please cite the following:
     - [FaceID Fidelity](#faceid-fidelity)
     - [FaceID Customization](#faceid-customization)
   - [Released CrossFaceID dataset](#released-crossfaceid-dataset)
-  - [Released FaceCustomization Models](#released-facecustomization-models)
+  - [Released FaceID Customization Models](#released-faceid-customization-models)
   - [Usage](#usage)
     - [Training](#training)
       - [Step 1. Download Required Models](#step-1-download-required-models)
@@ -81,7 +81,7 @@ The results of the performance for FaceID customization models in customizing or
 Our CrossFaceID dataset is available on [Huggingface](https://huggingface.co/datasets/Super-shuhe/CrossFaceID). It comprises 40,000 text-image pairs from approximately 2,000 individuals, with each person represented by around 20 images that capture various facial attributes, including different poses, expressions, angles, and adornments.
 
 
-## Released FaceCustomization Models
+## Released FaceID Customization Models
 
 The trained InstantID model is available [here](https://huggingface.co/Super-shuhe/CrossFaceID-InstantID).
 
