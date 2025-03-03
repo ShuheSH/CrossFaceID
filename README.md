@@ -26,6 +26,25 @@ If you find this repository helpful, please cite the following:
 * **[25 Jan, 2025]** We release the first version of the paper.
 
 
+## Links
+- [Turn That Frown Upside Down: FaceID Customization via Cross-Training Data](#turn-that-frown-upside-down-faceid-customization-via-cross-training-data)
+  - [🥳 News](#-news)
+  - [Links](#links)
+  - [Introduction](#introduction)
+  - [Comparison with Previous Works](#comparison-with-previous-works)
+    - [FaceID Fidelity](#faceid-fidelity)
+    - [FaceID Customization](#faceid-customization)
+  - [Released CrossFaceID dataset](#released-crossfaceid-dataset)
+  - [Released FaceCustomization Models](#released-facecustomization-models)
+  - [Usage](#usage)
+    - [Training](#training)
+      - [Step 1. Download Required Models](#step-1-download-required-models)
+      - [Step 2. Download Required Dataset](#step-2-download-required-dataset)
+      - [Step 3. Training](#step-3-training)
+    - [Inference](#inference)
+  - [Contact](#contact)
+
+
 
 ## Introduction
 
@@ -59,9 +78,12 @@ The results of the performance for FaceID customization models in customizing or
 
 ## Released CrossFaceID dataset
 
+Our CrossFaceID dataset is available on [Huggingface](https://huggingface.co/datasets/Super-shuhe/CrossFaceID). It comprises 40,000 text-image pairs from approximately 2,000 individuals, with each person represented by around 20 images that capture various facial attributes, including different poses, expressions, angles, and adornments.
+
 
 ## Released FaceCustomization Models
 
+The trained InstantID model is available [here](https://huggingface.co/Super-shuhe/CrossFaceID-InstantID).
 
 ## Usage
 
@@ -107,13 +129,25 @@ For face encoder, you need to manutally download via this [URL](https://github.c
 
 #### Step 2. Download Required Dataset
 
-#### Step 3. Training 
+Please download our released dataset from [Huggingface](https://huggingface.co/datasets/Super-shuhe/CrossFaceID).
 
+#### Step 3. Training
+
+1. Fill the `MODEL_NAME`, `ENCODER_NAME`, `ADAPTOR_NAME`, `CONTROLNET_NAME`, and `JSON_FILE` into our provided training script `./train_instantId_sdxl.sh`, where:
+   1. `MODEL_NAME` refers to the backboned diffusion model, e.g., `stable-diffusion-xl-base-1.0`
+   2. `ENCODER_NAME` refers to the downloaded encoder, e.g., `image_encoder`
+   3. `ADAPTOR_NAME` and `CONTROLNET_NAME` refers to the pre-trained official InstantID model, e.g., `checkpoints/ip-adapter.bin` and `checkpoints/ControlNetModel`
+   4. `JSON_FILE` refers to our released CrossFaceID dataset.
+2. Run the training scirpt, such as: `bash ./train_instantId_sdxl.sh`
 
 
 ### Inference
 
-
+1. Fill the `base_model_path`, `face_adapter`, `controlnet_path`, `prompt0`, and `face_image` into our provided inference script `./infer_from_pkl.py`, where:
+   1. `base_model_path` refers to the backboned diffusion model, e.g., `stable-diffusion-xl-base-1.0`
+   2. `face_adapter` and `controlnet_path` refer to your trained model e.g., `checkpoints/ip-adapter.bin` and `checkpoints/ControlNetModel`
+   3. `prompt0` and `face_image` refer to your test sample.
+2. Run the training script, such as: `python ./infer_from_pkl.py`
 
 
 ## Contact
