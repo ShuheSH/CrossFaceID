@@ -2,7 +2,7 @@
 
 
 
-This repository contains resources referenced in the paper [Turn That Frown Upside Down: FaceID Customization via Cross-Training Data](). 
+This repository contains resources referenced in the paper [Turn That Frown Upside Down: FaceID Customization via Cross-Training Data](https://arxiv.org/abs/2501.15407v1). 
 
 If you find this repository helpful, please cite the following:
 ```latex
